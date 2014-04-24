@@ -3,12 +3,10 @@ class Dog
     @name = name
     @weight = weight
   end
-  # allow name reference via method
-  def name 
+  def name # allow name reference via method
     @name
   end
-  # allow weight reference via method
-  def weight 
+  def weight # allow weight reference via method
     @weight
   end 
   def one_month_older(growth, age)
@@ -36,16 +34,13 @@ end
 dog = Dog.new("Boomer", 2) # Boomer is born
 # reference name and weight via methods
 puts "#{dog.name} is born and weighs #{dog.weight} pounds."
-puts
+puts # blank line for readability
 age = 0  # initial age in months
 growth = 2.25 # initial growth rate
 18.times do
-    age += 1
-    # dog ages one month
+    age += 1 # dog ages one month
     dog.one_month_older(growth, age)
-    # reduce growth rate by half
-    growth = growth/2
-    # dog bark
-    dog.speak(age)
+    growth = growth/2 # reduce growth rate by half
+    dog.speak(age) # dog barks
     puts 
 end
