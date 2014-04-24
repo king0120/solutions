@@ -6,7 +6,9 @@ class Dog
   def one_month_older(growth)
     # weight increases by minimum 1, plus increase from growth rate
     @weight += 1 + (@weight * growth)
-    print @name + " weighs " + @weight.to_i.to_s + ' pounds'
+    # print weight on one line then...
+    # convert from float to integer to round down and then to string
+    print "#{@name} weighs #{@weight.to_i.to_s} pounds."
   end
   def speak(age)
     if age < 18
@@ -28,9 +30,9 @@ growth = 2.75  # initial growth rate
     puts "It's now one month later..."
     dog.one_month_older(growth)
     if age == 1 # singular 'month' 
-        puts ' and is ' + age.to_s + ' month old.'
+        puts " and is #{age.to_s} month old."
     else # plural, months
-        puts ' and is ' + age.to_s + ' months old.'
+        puts " and is #{age.to_s} months old."
     end
     dog.speak(age)
     puts 
