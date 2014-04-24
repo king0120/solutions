@@ -4,12 +4,12 @@ class Dog
     @weight = weight
   end
   def one_month_older(growth)
-    # weight increases by minimum 1, plus growth rate increase
+    # weight increases by minimum 1, plus increase from growth rate
     @weight += 1 + (@weight * growth)
     print @name + " weighs " + @weight.to_i.to_s + ' pounds'
   end
   def speak(age)
-    if age < 17
+    if age < 18
       puts "ruff!"
     else
       puts "RUFF! RUFF!"
