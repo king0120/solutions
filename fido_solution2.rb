@@ -9,9 +9,11 @@ class Dog
   def weight # allow weight reference via method
     @weight
   end 
-  def one_month_older(growth, age)
+  def one_month_older(growth, rate_reduction, age)
+    # rate reduction is initially 1, so no reduction until next month
+    growth = growth/100/rate_reduction
     # weight increases by minimum, plus increase from growth rate
-    @weight += 1.5 + (@weight * growth)
+    @weight += 1 + (@weight * growth)
     puts "It's now one month later..."
     # use print for no line break
     if age == 1 # singular 'month' 
@@ -31,16 +33,17 @@ class Dog
   end
 end
 
-dog = Dog.new("Boomer", 2) # Boomer is born
+dog = Dog.new("Baxter", 2) # Boomer is born
 # reference name and weight via methods
 puts "#{dog.name} is born and weighs #{dog.weight} pounds."
 puts # blank line for readability
 age = 0  # initial age in months
-growth = 2.25 # initial growth rate
+growth = 185 # initial growth rate
+rate_reduction = 1
 18.times do
     age += 1 # dog ages one month
-    dog.one_month_older(growth, age)
-    growth = growth/2 # reduce growth rate by half
+    dog.one_month_older(growth, rate_reduction, age)
     dog.speak(age) # dog barks
+    rate_reduction = rate_reduction + 1.75
     puts 
 end
