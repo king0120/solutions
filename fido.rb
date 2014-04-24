@@ -8,7 +8,7 @@ class Dog
     @weight += 1 + (@weight * growth)
     # print weight on one line then...
     # convert from float to integer to round down and then to string
-    print "#{@name} weighs #{@weight.to_i.to_s} pounds."
+    print "#{@name} weighs #{@weight.to_i.to_s} pounds"
   end
   def speak(age)
     if age < 18
